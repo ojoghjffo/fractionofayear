@@ -3,9 +3,9 @@ import calendar
 
 def yeardivide():
     try:
-        numerator = int(input("Numerator: "))
+        numerator = float(input("Numerator: "))
         
-        denominator = int(input("Denominator: "))
+        denominator = float(input("Denominator: "))
         leapyear = input("Add February 29? y/n ")
         isLeapYear = leapyear in ["y", "yes"]
         quotient = denominator / (365 + isLeapYear)
@@ -15,8 +15,8 @@ def yeardivide():
         second = (minute * 60 - math.floor(minute * 60))
         zeromin = "0" if math.floor(minute * 60) < 10 else ""
         zerosec = "0" if math.floor(second * 60) < 10 else ""
-        if numerator < 1:
-            print("Numerator must not be less than one")
+        if numerator <= 0:
+            print("Numerator must not be equal or less than zero")
             return
         
         if hour == 0:
